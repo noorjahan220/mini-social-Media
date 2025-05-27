@@ -15,11 +15,6 @@ Snipfeed is a clean and minimal social networking UI built using **HTML**, **Tai
 - HTML5
 - Tailwind CSS
 - Font Awesome
-
-## 📷 Screenshots
-
-![Snipfeed Screenshot](https://i.ibb.co/Fksgpc59/find-the-best-great-barrier-reef-tours-scaled.jpg)
-
 ## 📁 How to Use
 
 1. Clone this repo:
