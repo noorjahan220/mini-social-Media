@@ -4,33 +4,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/33c81823c1.js" crossorigin="anonymous"></script>
+    <title>Snipfeed - Social Network</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
 
+        .nav-links a {
+            text-decoration: none;
+            color: #4B5563;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #3B82F6;
+            background-color: #EFF6FF;
+        }
+
+        .nav-links a.active {
+            color: #3B82F6;
+            background-color: #DBEAFE;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2.5rem;
+            background: white;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .user-pic img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .user-pic img:hover {
+            transform: scale(1.05);
+        }
+
+        .logo h3 {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .post-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-image {
+            border-radius: 0.5rem;
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .action-btn:hover {
+            background-color: #F3F4F6;
+            color: #3B82F6;
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-gray-50 min-h-screen">
     <!-- navbar -->
-    <header>
-        <nav class="px-10">
+    <header class="sticky top-0 z-50">
+        <nav>
             <div class="logo">
                 <h3 class="text-3xl">Snipfeed</h3>
             </div>
 
             <ul class="nav-links">
-                <li><a href="">Home</a></li>
-                <li><a href="">Profile</a></li>
-                <li><a href="">Notification</a></li>
-                <li><a href="">Messages</a></li>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Notifications</a></li>
+                <li><a href="#">Messages</a></li>
             </ul>
 
             <div class="user-pic">
-                <img src="https://i.ibb.co/Y4Kg8JsR/depositphotos-150975580-stock-photo-portrait-of-businesswoman-in-office.webp" alt="User" />
+                <img src="https://i.ibb.co/Y4Kg8JsR/depositphotos-150975580-stock-photo-portrait-of-businesswoman-in-office.webp"
+                    alt="User Profile" />
             </div>
         </nav>
     </header>
+
+    <main class="max-w-2xl mx-auto px-4">
+        <!-- Post created  -->
+        <section class="mt-8">
+            <div class="bg-white rounded-xl shadow-lg border-l-4 border-blue-500 p-6">
+                <div class="flex items-center space-x-4 mb-4">
+                    <img class="w-12 h-12 rounded-full object-cover"
+                        src="https://i.ibb.co/Y4Kg8JsR/depositphotos-150975580-stock-photo-portrait-of-businesswoman-in-office.webp"
+                        alt="Your Profile" />
+                    <div class="flex-1">
+                        <textarea
+                            class="w-full h-20 p-4 border border-gray-200 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent bg-gray-50"
+                            placeholder="What's on your mind?"></textarea>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <button
+                        class="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                        <i class="fa-regular fa-image text-green-500"></i>
+                        <span>Photo</span>
+                    </button>
+                    <button
+                        class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                        Post
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- All posts -->
+        <section class="mt-8 space-y-6">
+            <!-- Post 1 -->
+            <div class="post-card bg-white shadow-md rounded-xl p-6 space-y-4">
+
+                <div class="flex items-center space-x-4">
+                    <img class="w-12 h-12 rounded-full object-cover"
+                        src="https://i.ibb.co/Y4Kg8JsR/depositphotos-150975580-stock-photo-portrait-of-businesswoman-in-office.webp"
+                        alt="User Profile" />
+                    <div class="flex flex-col">
+                        <h2 class="font-semibold text-lg text-gray-800">Sarah Johnson</h2>
+                        <p class="text-sm text-gray-500">2 hours ago</p>
+                    </div>
+                </div>
+
+
+                <p class="text-gray-700 leading-relaxed">Just had an amazing day at the park! The weather was perfect
+                    and I got to spend quality time with friends. Sometimes the simple moments are the best ones. 🌞</p>
+                <div class="flex justify-between items-center border-t border-gray-100 pt-4">
+                    <button class="action-btn text-sm text-gray-600">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </button>
+                    <button class="action-btn text-sm text-gray-600">
+                        <i class="fa-regular fa-comment"></i>
+                        <span>Comment</span>
+                    </button>
+                    <button class="action-btn text-sm text-gray-600">
+                        <i class="fa-regular fa-share"></i>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="post-card bg-white shadow-md rounded-xl p-6 space-y-4">
+
+                <div class="flex items-center space-x-4">
+                    <img class="w-12 h-12 rounded-full object-cover"
+                        src="https://i.ibb.co/p6rZqfCQ/360-F-214746128-31-Jkea-P6r-U0-Nzzzd-FC4kh-Gkmqc8noe6h.jpg"
+                        alt="User Profile" />
+                    <div class="flex flex-col">
+                        <h2 class="font-semibold text-lg text-gray-800">Mike Chen</h2>
+                        <p class="text-sm text-gray-500">4 hours ago</p>
+                    </div>
+                </div>
+
+
+                <p class="text-gray-700 leading-relaxed">Exploring the Great Barrier Reef was absolutely breathtaking!
+                    The marine life here is incredible. Nature never fails to amaze me. 🐠🌊</p>
+                <img class="post-image"
+                    src="https://i.ibb.co/Fksgpc59/find-the-best-great-barrier-reef-tours-scaled.jpg"
+                    alt="Great Barrier Reef">
+
+
+                <div class="flex justify-between items-center border-t border-gray-100 pt-4">
+                    <button class="action-btn text-sm text-gray-600">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </button>
+                    <button class="action-btn text-sm text-gray-600">
+                        <i class="fa-regular fa-comment"></i>
+                        <span>Comment</span>
+                    </button>
+                    <button class="action-btn text-sm text-gray-600">
+                        <i class="fa-regular fa-share"></i>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="post-card bg-white shadow-md rounded-xl p-6 space-y-4">
+
+                <div class="flex items-center space-x-4">
+                    <img class="w-12 h-12 rounded-full object-cover"
+                        src="https://i.ibb.co/FbcKG9hR/pexels-photo-1239291.jpg" alt="User Profile" />
+                    <div class="flex flex-col">
+                        <h2 class="font-semibold text-lg text-gray-800">Elena Rodriguez</h2>
+                        <p class="text-sm text-gray-500">6 hours ago</p>
+                    </div>
+                </div>
+
+
+                <img class="post-image"
+                    src="https://i.ibb.co/S4hRCMJX/Santorini-2024-Street-View-Shutterstock-1040803156-Hybris.jpg"
+                    alt="Santorini Greece">
+                <p class="text-gray-700 leading-relaxed">Santorini sunsets hit different! This place is pure magic. ✨🏛️
+                </p>
+
+
+                <div class="flex justify-between items-center border-t border-gray-100 pt-4">
+                    <button class="action-btn text-sm text-gray-600">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </button>
+                    <button class="action-btn text-sm text-gray-600">
+                        <i class="fa-regular fa-comment"></i>
+                        <span>Comment</span>
+                    </button>
+                    <button class="action-btn text-sm text-gray-600">
+                        <i class="fa-regular fa-share"></i>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
 </body>
 
 </html>
