@@ -20,3 +20,4 @@ Snipfeed is a clean and minimal social networking UI built using **HTML**, **Tai
 1. Clone this repo:
    ```bash
    git clone https://github.com/your-username/snipfeed-social.git
+   The UI is fully responsive, so it will adapt beautifully across mobile, tablet, and desktop devices.
